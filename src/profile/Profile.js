@@ -2,19 +2,22 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-function showName() {
-    alert("Rania Fatnassi")
-}
+
 
 const Profile = (props) => {
+    function showName() {
+        alert(`${props.name}`)
+    }
     return (
-        <tr>
-            <th>{props.name}</th>
-            <th>{props.bio} </th>
-            <th>{props.profession}</th>
-            <th>{props.children}</th>
-            <th><button onClick={showName}>click me</button></th>
-        </tr>
+        <div>
+            <div>{props.children}</div>
+            <div>
+            <p className = 'textualData'>{props.name}</p>
+            <p>{props.bio} </p>
+            <p className = 'textualData'>{props.profession}</p>
+            </div>
+            <div ><button className = 'button' onClick={showName}>click me</button></div>
+        </div>
     );
 };
 
